@@ -201,6 +201,26 @@ function Inicio() {
           ))}
         </div>
       </section>
+
+      <section className="border-t border-border py-32 sm:py-40">
+        <div className="section-shell flex flex-col items-center text-center">
+          <Reveal>
+            <h2 className="max-w-2xl font-display text-3xl leading-tight sm:text-5xl">
+              ¿Tenés una fecha en mente?
+            </h2>
+            <p className="mx-auto mt-6 max-w-md text-base text-muted-foreground">
+              Escribime y armamos algo juntos.
+            </p>
+            <Link
+              to="/contacto"
+              className="mt-10 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-9 py-4 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-85"
+            >
+              Contactarme <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
     </>
   );
 }
+
