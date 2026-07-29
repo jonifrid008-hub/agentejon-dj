@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
-import logo from "@/assets/agentejon-logo.png.asset.json";
+import { ArrowRight, Headphones, Mic2, Sparkles, Speaker } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import { Reveal } from "@/components/Reveal";
 
