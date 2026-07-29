@@ -37,18 +37,12 @@ function Inicio() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background" />
 
-        <div className="section-shell relative z-10 flex flex-col items-center py-32 text-center">
-          <img
-            src={logo.url}
-            alt="Logo de AgenteJon DJ"
-            width={320}
-            height={224}
-            className="w-52 max-w-full object-contain mix-blend-screen sm:w-64 md:w-72"
-          />
-          <h1 className="mt-10 font-display text-3xl font-semibold tracking-[0.22em] uppercase sm:text-5xl">
+        <div className="section-shell relative z-10 flex flex-col items-center py-40 text-center">
+          <p className="eyebrow">Sitio oficial</p>
+          <h1 className="mt-8 font-display text-4xl font-semibold tracking-[0.22em] uppercase sm:text-6xl">
             AgenteJon DJ
           </h1>
-          <p className="mt-6 max-w-md text-base text-muted-foreground sm:text-lg">
+          <p className="mt-8 max-w-md text-base text-muted-foreground sm:text-lg">
             La música es mi forma de conectar con la gente.
           </p>
           <div className="mt-12 flex flex-col gap-3 sm:flex-row">
