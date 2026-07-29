@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
-import logo from "@/assets/agentejon-logo.png.asset.json";
+import { ArrowRight, Headphones, Mic2, Sparkles, Speaker } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import { Reveal } from "@/components/Reveal";
 
@@ -38,18 +37,12 @@ function Inicio() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background" />
 
-        <div className="section-shell relative z-10 flex flex-col items-center py-32 text-center">
-          <img
-            src={logo.url}
-            alt="Logo de AgenteJon DJ"
-            width={320}
-            height={224}
-            className="w-52 max-w-full object-contain mix-blend-screen sm:w-64 md:w-72"
-          />
-          <h1 className="mt-10 font-display text-3xl font-semibold tracking-[0.22em] uppercase sm:text-5xl">
+        <div className="section-shell relative z-10 flex flex-col items-center py-40 text-center">
+          <p className="eyebrow">Sitio oficial</p>
+          <h1 className="mt-8 font-display text-4xl font-semibold tracking-[0.22em] uppercase sm:text-6xl">
             AgenteJon DJ
           </h1>
-          <p className="mt-6 max-w-md text-base text-muted-foreground sm:text-lg">
+          <p className="mt-8 max-w-md text-base text-muted-foreground sm:text-lg">
             La música es mi forma de conectar con la gente.
           </p>
           <div className="mt-12 flex flex-col gap-3 sm:flex-row">
@@ -93,6 +86,100 @@ function Inicio() {
       </section>
 
       <section className="border-t border-border py-28 sm:py-36">
+        <div className="section-shell">
+          <Reveal>
+            <p className="eyebrow">En qué trabajo</p>
+            <h2 className="mt-6 max-w-2xl font-display text-3xl leading-tight sm:text-4xl">
+              Música pensada para cada momento.
+            </h2>
+          </Reveal>
+          <div className="mt-16 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                icon: Headphones,
+                title: "Sets en vivo",
+                text: "Selección y mezcla en tiempo real, leyendo lo que pide la pista.",
+              },
+              {
+                icon: Speaker,
+                title: "Fiestas y eventos",
+                text: "Musicalización adaptada al formato y a la duración del evento.",
+              },
+              {
+                icon: Mic2,
+                title: "Mixes propios",
+                text: "Sesiones grabadas para escuchar cuando quieras.",
+              },
+              {
+                icon: Sparkles,
+                title: "Colaboraciones",
+                text: "Abierto a proyectos, b2b y propuestas nuevas.",
+              },
+            ].map((s, i) => (
+              <Reveal key={s.title} delay={i * 90}>
+                <div className="flex h-full flex-col gap-6 bg-background p-10">
+                  <s.icon className="h-6 w-6 text-muted-foreground" strokeWidth={1.5} />
+                  <div>
+                    <h3 className="font-display text-lg">{s.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.text}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-border py-28 sm:py-36">
+        <div className="section-shell">
+          <Reveal>
+            <p className="eyebrow">Cómo trabajo</p>
+          </Reveal>
+          <div className="mt-16 grid gap-14 md:grid-cols-3">
+            {[
+              {
+                n: "01",
+                t: "Hablamos",
+                d: "Me contás qué tipo de evento es, la fecha y el clima que buscás.",
+              },
+              {
+                n: "02",
+                t: "Preparo el set",
+                d: "Armo una selección pensada para ese público y ese espacio.",
+              },
+              {
+                n: "03",
+                t: "Toco",
+                d: "El día del evento me ocupo de que la música no baje nunca.",
+              },
+            ].map((step, i) => (
+              <Reveal key={step.n} delay={i * 110}>
+                <div className="border-t border-border pt-8">
+                  <span className="font-display text-sm tracking-[0.3em] text-muted-foreground">
+                    {step.n}
+                  </span>
+                  <h3 className="mt-6 font-display text-xl">{step.t}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{step.d}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-border py-32 sm:py-44">
+        <div className="section-shell">
+          <Reveal>
+            <blockquote className="mx-auto max-w-3xl text-center font-display text-2xl leading-snug sm:text-4xl">
+              “Recién empiezo, y prefiero que cada fecha hable por sí sola.”
+            </blockquote>
+          </Reveal>
+        </div>
+      </section>
+
+
+
+      <section className="border-t border-border py-28 sm:py-36">
         <div className="section-shell grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-3">
           {[
             { to: "/musica", title: "Música", text: "Sets, mixes y plataformas." },
@@ -114,6 +201,26 @@ function Inicio() {
           ))}
         </div>
       </section>
+
+      <section className="border-t border-border py-32 sm:py-40">
+        <div className="section-shell flex flex-col items-center text-center">
+          <Reveal>
+            <h2 className="max-w-2xl font-display text-3xl leading-tight sm:text-5xl">
+              ¿Tenés una fecha en mente?
+            </h2>
+            <p className="mx-auto mt-6 max-w-md text-base text-muted-foreground">
+              Escribime y armamos algo juntos.
+            </p>
+            <Link
+              to="/contacto"
+              className="mt-10 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-9 py-4 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-85"
+            >
+              Contactarme <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
     </>
   );
 }
+
