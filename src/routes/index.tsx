@@ -44,7 +44,7 @@ function Inicio() {
             alt="Logo de AgenteJon DJ"
             width={320}
             height={224}
-            className="w-52 max-w-full object-contain sm:w-64 md:w-72"
+            className="w-52 max-w-full object-contain mix-blend-screen sm:w-64 md:w-72"
           />
           <h1 className="mt-10 font-display text-3xl font-semibold tracking-[0.22em] uppercase sm:text-5xl">
             AgenteJon DJ

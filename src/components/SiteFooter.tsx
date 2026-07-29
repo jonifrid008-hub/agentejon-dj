@@ -12,7 +12,7 @@ export function SiteFooter() {
             width={36}
             height={36}
             loading="lazy"
-            className="h-8 w-8 object-contain"
+            className="h-8 w-8 object-contain mix-blend-screen"
           />
           <span className="font-display text-xs tracking-[0.3em] uppercase">AgenteJon DJ</span>
         </div>

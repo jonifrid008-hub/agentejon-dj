@@ -37,7 +37,7 @@ export function SiteHeader() {
             alt="Logo de AgenteJon DJ"
             width={40}
             height={40}
-            className="h-9 w-9 shrink-0 object-contain"
+            className="h-9 w-9 shrink-0 object-contain mix-blend-screen"
           />
           <span className="truncate font-display text-sm tracking-[0.28em] uppercase">
             AgenteJon
