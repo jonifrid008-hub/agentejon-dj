@@ -9,8 +9,32 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SobreMiRouteImport } from './routes/sobre-mi'
+import { Route as MusicaRouteImport } from './routes/musica'
+import { Route as GaleriaRouteImport } from './routes/galeria'
+import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SobreMiRoute = SobreMiRouteImport.update({
+  id: '/sobre-mi',
+  path: '/sobre-mi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MusicaRoute = MusicaRouteImport.update({
+  id: '/musica',
+  path: '/musica',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GaleriaRoute = GaleriaRouteImport.update({
+  id: '/galeria',
+  path: '/galeria',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactoRoute = ContactoRouteImport.update({
+  id: '/contacto',
+  path: '/contacto',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +43,72 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contacto': typeof ContactoRoute
+  '/galeria': typeof GaleriaRoute
+  '/musica': typeof MusicaRoute
+  '/sobre-mi': typeof SobreMiRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contacto': typeof ContactoRoute
+  '/galeria': typeof GaleriaRoute
+  '/musica': typeof MusicaRoute
+  '/sobre-mi': typeof SobreMiRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contacto': typeof ContactoRoute
+  '/galeria': typeof GaleriaRoute
+  '/musica': typeof MusicaRoute
+  '/sobre-mi': typeof SobreMiRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/contacto' | '/galeria' | '/musica' | '/sobre-mi'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/contacto' | '/galeria' | '/musica' | '/sobre-mi'
+  id: '__root__' | '/' | '/contacto' | '/galeria' | '/musica' | '/sobre-mi'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactoRoute: typeof ContactoRoute
+  GaleriaRoute: typeof GaleriaRoute
+  MusicaRoute: typeof MusicaRoute
+  SobreMiRoute: typeof SobreMiRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sobre-mi': {
+      id: '/sobre-mi'
+      path: '/sobre-mi'
+      fullPath: '/sobre-mi'
+      preLoaderRoute: typeof SobreMiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/musica': {
+      id: '/musica'
+      path: '/musica'
+      fullPath: '/musica'
+      preLoaderRoute: typeof MusicaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/galeria': {
+      id: '/galeria'
+      path: '/galeria'
+      fullPath: '/galeria'
+      preLoaderRoute: typeof GaleriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contacto': {
+      id: '/contacto'
+      path: '/contacto'
+      fullPath: '/contacto'
+      preLoaderRoute: typeof ContactoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +121,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactoRoute: ContactoRoute,
+  GaleriaRoute: GaleriaRoute,
+  MusicaRoute: MusicaRoute,
+  SobreMiRoute: SobreMiRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
