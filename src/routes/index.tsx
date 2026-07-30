@@ -205,15 +205,7 @@ function Inicio() {
         </div>
       </section>
 
-      <section className="border-t border-border py-32 sm:py-44">
-        <div className="section-shell">
-          <Reveal>
-            <blockquote className="mx-auto max-w-3xl text-center font-display text-2xl leading-snug sm:text-4xl">
-              “Recién empiezo, y prefiero que cada fecha hable por sí sola.”
-            </blockquote>
-          </Reveal>
-        </div>
-      </section>
+
 
 
 
