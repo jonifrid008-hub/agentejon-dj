@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Headphones, Mic2, Sparkles, Speaker } from "lucide-react";
-import hero from "@/assets/hero.jpg";
+import heroAsset from "@/assets/hero-crowd.png.asset.json";
 import retrato from "@/assets/agentejon-retrato-bn.jpg";
-import { Reveal } from "@/components/Reveal";
+import { Reveal, Parallax } from "@/components/Reveal";
 
 export const Route = createFileRoute("/")({
   head: () => ({
