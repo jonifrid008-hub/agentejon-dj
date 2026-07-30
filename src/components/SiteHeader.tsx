@@ -24,9 +24,9 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,backdrop-filter,border-color,box-shadow] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
         scrolled || open
-          ? "border-b border-border bg-background/90 backdrop-blur-xl"
+          ? "border-b border-border bg-background/60 shadow-[0_10px_40px_-30px_oklch(1_0_0/40%)] backdrop-blur-2xl backdrop-saturate-150"
           : "border-b border-transparent bg-transparent"
       }`}
     >

@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Headphones, Mic2, Sparkles, Speaker } from "lucide-react";
-import hero from "@/assets/hero.jpg";
+import heroAsset from "@/assets/hero-crowd.png.asset.json";
 import retrato from "@/assets/agentejon-retrato-bn.jpg";
-import { Reveal } from "@/components/Reveal";
+import { Reveal, Parallax } from "@/components/Reveal";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,13 +30,14 @@ function Inicio() {
     <>
       <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
         <img
-          src={hero}
-          alt="Cabina de DJ iluminada en penumbra"
+          src={heroAsset.url}
+          alt="AgenteJon DJ tocando frente al público"
           width={1920}
           height={1088}
-          className="absolute inset-0 h-full w-full object-cover opacity-40"
+          className="absolute inset-0 h-full w-full scale-105 object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background" />
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background" />
 
         <div className="section-shell relative z-10 flex flex-col items-center py-40 text-center">
           <p className="eyebrow">Sitio oficial</p>
@@ -49,13 +50,13 @@ function Inicio() {
           <div className="mt-12 flex flex-col gap-3 sm:flex-row">
             <Link
               to="/musica"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-3.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-85"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-3.5 text-sm font-medium text-primary-foreground transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:opacity-85"
             >
               Escuchar música
             </Link>
             <Link
               to="/contacto"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-border px-8 py-3.5 text-sm font-medium transition-colors hover:bg-surface"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-border px-8 py-3.5 text-sm font-medium transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:bg-surface"
             >
               Contactarme
             </Link>
@@ -66,24 +67,26 @@ function Inicio() {
       <section className="border-t border-border bg-background py-28 sm:py-40">
         <div className="section-shell grid items-center gap-14 lg:grid-cols-[45%_1fr] lg:gap-20">
           <Reveal>
-            <div className="relative">
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -inset-6 rounded-[1.75rem] bg-[radial-gradient(60%_50%_at_50%_40%,rgba(255,255,255,0.10),transparent_70%)] blur-xl"
-              />
-              <img
-                src={retrato}
-                alt="Retrato en blanco y negro de AgenteJon DJ con auriculares"
-                width={1080}
-                height={1920}
-                loading="lazy"
-                className="relative aspect-[9/16] w-full rounded-xl object-cover"
-              />
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-[oklch(1_0_0/10%)]"
-              />
-            </div>
+            <Parallax strength={18}>
+              <div className="group relative">
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute -inset-6 rounded-[1.75rem] bg-[radial-gradient(60%_50%_at_50%_40%,rgba(255,255,255,0.10),transparent_70%)] blur-xl"
+                />
+                <img
+                  src={retrato}
+                  alt="Retrato en blanco y negro de AgenteJon DJ con auriculares"
+                  width={1080}
+                  height={1920}
+                  loading="lazy"
+                  className="relative aspect-[9/16] w-full rounded-xl object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.02]"
+                />
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-[oklch(1_0_0/10%)]"
+                />
+              </div>
+            </Parallax>
           </Reveal>
 
           <Reveal delay={220}>
@@ -111,9 +114,9 @@ function Inicio() {
             </blockquote>
             <Link
               to="/musica"
-              className="mt-12 inline-flex items-center gap-2 rounded-full bg-primary px-9 py-4 text-xs font-medium tracking-[0.22em] text-primary-foreground uppercase transition-all duration-300 hover:opacity-85 hover:tracking-[0.28em]"
+              className="mt-12 inline-flex items-center gap-2 rounded-full bg-primary px-9 py-4 text-xs font-medium tracking-[0.22em] text-primary-foreground uppercase transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:tracking-[0.28em] hover:opacity-85"
             >
-              Escuchar mi música
+              Conocé mi música
             </Link>
           </Reveal>
         </div>
@@ -152,7 +155,7 @@ function Inicio() {
               },
             ].map((s, i) => (
               <Reveal key={s.title} delay={i * 90}>
-                <div className="flex h-full flex-col gap-6 bg-background p-10">
+                <div className="flex h-full flex-col gap-6 bg-background p-10 transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-surface">
                   <s.icon className="h-6 w-6 text-muted-foreground" strokeWidth={1.5} />
                   <div>
                     <h3 className="font-display text-lg">{s.title}</h3>
@@ -202,15 +205,7 @@ function Inicio() {
         </div>
       </section>
 
-      <section className="border-t border-border py-32 sm:py-44">
-        <div className="section-shell">
-          <Reveal>
-            <blockquote className="mx-auto max-w-3xl text-center font-display text-2xl leading-snug sm:text-4xl">
-              “Recién empiezo, y prefiero que cada fecha hable por sí sola.”
-            </blockquote>
-          </Reveal>
-        </div>
-      </section>
+
 
 
 
@@ -224,7 +219,7 @@ function Inicio() {
             <Reveal key={item.to} delay={i * 100}>
               <Link
                 to={item.to}
-                className="group flex h-full flex-col justify-between gap-10 bg-background p-10 transition-colors hover:bg-surface"
+                className="group flex h-full flex-col justify-between gap-10 bg-background p-10 transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-surface"
               >
                 <span className="font-display text-xl">{item.title}</span>
                 <span className="flex items-center justify-between text-sm text-muted-foreground">
