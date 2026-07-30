@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Headphones, Mic2, Sparkles, Speaker } from "lucide-react";
 import hero from "@/assets/hero.jpg";
+import retrato from "@/assets/agentejon-retrato-bn.jpg";
 import { Reveal } from "@/components/Reveal";
 
 export const Route = createFileRoute("/")({
@@ -62,28 +63,62 @@ function Inicio() {
         </div>
       </section>
 
-      <section className="border-t border-border py-28 sm:py-36">
-        <div className="section-shell grid gap-14 md:grid-cols-2 md:items-end">
+      <section className="border-t border-border bg-background py-28 sm:py-40">
+        <div className="section-shell grid items-center gap-14 lg:grid-cols-[45%_1fr] lg:gap-20">
           <Reveal>
-            <p className="eyebrow">El proyecto</p>
-            <h2 className="mt-6 font-display text-3xl leading-tight sm:text-4xl">
-              Un proyecto que recién empieza, construido con intención.
-            </h2>
+            <div className="relative">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -inset-6 rounded-[1.75rem] bg-[radial-gradient(60%_50%_at_50%_40%,rgba(255,255,255,0.10),transparent_70%)] blur-xl"
+              />
+              <img
+                src={retrato}
+                alt="Retrato en blanco y negro de AgenteJon DJ con auriculares"
+                width={1080}
+                height={1920}
+                loading="lazy"
+                className="relative aspect-[9/16] w-full rounded-xl object-cover"
+              />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-[oklch(1_0_0/10%)]"
+              />
+            </div>
           </Reveal>
-          <Reveal delay={120}>
-            <p className="text-base leading-relaxed text-muted-foreground">
-              AgenteJon DJ nace de las ganas de compartir música y crear momentos. Este espacio
-              va a ir creciendo con cada set, cada foto y cada persona que se sume al camino.
-            </p>
+
+          <Reveal delay={220}>
+            <p className="eyebrow">Sobre mí</p>
+            <h2 className="mt-6 font-display text-3xl leading-[1.05] tracking-[0.14em] uppercase sm:text-5xl">
+              AgenteJon DJ
+            </h2>
+            <div className="mt-8 space-y-5 text-base leading-relaxed text-muted-foreground sm:text-[1.0625rem]">
+              <p>
+                Soy AgenteJon DJ. Comencé mi camino como DJ desde muy joven, impulsado por mi
+                pasión por la música y las ganas de aprender y crecer constantemente.
+              </p>
+              <p>
+                Desde mis primeros pasos fui desarrollando mi técnica, explorando diferentes
+                estilos musicales y adquiriendo experiencia en distintos eventos.
+              </p>
+              <p>
+                Para mí, ser DJ no es solamente seleccionar canciones: es entender la energía del
+                momento, conectar con el público y crear una experiencia que se recuerde.
+              </p>
+            </div>
+            <blockquote className="mt-10 border-l border-border pl-6 font-display text-lg leading-snug text-foreground sm:text-xl">
+              “Una pasión que empezó desde muy temprano y que sigue creciendo con cada
+              presentación.”
+            </blockquote>
             <Link
-              to="/sobre-mi"
-              className="mt-8 inline-flex items-center gap-2 text-sm transition-opacity hover:opacity-70"
+              to="/musica"
+              className="mt-12 inline-flex items-center gap-2 rounded-full bg-primary px-9 py-4 text-xs font-medium tracking-[0.22em] text-primary-foreground uppercase transition-all duration-300 hover:opacity-85 hover:tracking-[0.28em]"
             >
-              Sobre mí <ArrowRight className="h-4 w-4" />
+              Escuchar mi música
             </Link>
           </Reveal>
         </div>
       </section>
+
 
       <section className="border-t border-border py-28 sm:py-36">
         <div className="section-shell">
