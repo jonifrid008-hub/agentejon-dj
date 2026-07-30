@@ -114,9 +114,9 @@ function Inicio() {
             </blockquote>
             <Link
               to="/musica"
-              className="mt-12 inline-flex items-center gap-2 rounded-full bg-primary px-9 py-4 text-xs font-medium tracking-[0.22em] text-primary-foreground uppercase transition-all duration-300 hover:opacity-85 hover:tracking-[0.28em]"
+              className="mt-12 inline-flex items-center gap-2 rounded-full bg-primary px-9 py-4 text-xs font-medium tracking-[0.22em] text-primary-foreground uppercase transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:tracking-[0.28em] hover:opacity-85"
             >
-              Escuchar mi música
+              Conocé mi música
             </Link>
           </Reveal>
         </div>
