@@ -40,7 +40,7 @@ export function SiteHeader() {
             className="h-9 w-9 shrink-0 object-contain mix-blend-screen"
           />
           <span className="truncate font-display text-sm tracking-[0.28em] uppercase">
-            AgenteJon
+            AGENTEJON DJ
           </span>
         </Link>
 
