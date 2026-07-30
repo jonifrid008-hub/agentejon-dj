@@ -219,7 +219,7 @@ function Inicio() {
             <Reveal key={item.to} delay={i * 100}>
               <Link
                 to={item.to}
-                className="group flex h-full flex-col justify-between gap-10 bg-background p-10 transition-colors hover:bg-surface"
+                className="group flex h-full flex-col justify-between gap-10 bg-background p-10 transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-surface"
               >
                 <span className="font-display text-xl">{item.title}</span>
                 <span className="flex items-center justify-between text-sm text-muted-foreground">
