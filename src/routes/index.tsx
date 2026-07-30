@@ -30,13 +30,14 @@ function Inicio() {
     <>
       <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
         <img
-          src={hero}
-          alt="Cabina de DJ iluminada en penumbra"
+          src={heroAsset.url}
+          alt="AgenteJon DJ tocando frente al público"
           width={1920}
           height={1088}
-          className="absolute inset-0 h-full w-full object-cover opacity-40"
+          className="absolute inset-0 h-full w-full scale-105 object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background" />
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background" />
 
         <div className="section-shell relative z-10 flex flex-col items-center py-40 text-center">
           <p className="eyebrow">Sitio oficial</p>
