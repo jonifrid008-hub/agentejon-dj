@@ -155,7 +155,7 @@ function Inicio() {
               },
             ].map((s, i) => (
               <Reveal key={s.title} delay={i * 90}>
-                <div className="flex h-full flex-col gap-6 bg-background p-10">
+                <div className="flex h-full flex-col gap-6 bg-background p-10 transition-colors duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-surface">
                   <s.icon className="h-6 w-6 text-muted-foreground" strokeWidth={1.5} />
                   <div>
                     <h3 className="font-display text-lg">{s.title}</h3>
