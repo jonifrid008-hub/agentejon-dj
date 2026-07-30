@@ -67,24 +67,26 @@ function Inicio() {
       <section className="border-t border-border bg-background py-28 sm:py-40">
         <div className="section-shell grid items-center gap-14 lg:grid-cols-[45%_1fr] lg:gap-20">
           <Reveal>
-            <div className="relative">
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -inset-6 rounded-[1.75rem] bg-[radial-gradient(60%_50%_at_50%_40%,rgba(255,255,255,0.10),transparent_70%)] blur-xl"
-              />
-              <img
-                src={retrato}
-                alt="Retrato en blanco y negro de AgenteJon DJ con auriculares"
-                width={1080}
-                height={1920}
-                loading="lazy"
-                className="relative aspect-[9/16] w-full rounded-xl object-cover"
-              />
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-[oklch(1_0_0/10%)]"
-              />
-            </div>
+            <Parallax strength={18}>
+              <div className="group relative">
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute -inset-6 rounded-[1.75rem] bg-[radial-gradient(60%_50%_at_50%_40%,rgba(255,255,255,0.10),transparent_70%)] blur-xl"
+                />
+                <img
+                  src={retrato}
+                  alt="Retrato en blanco y negro de AgenteJon DJ con auriculares"
+                  width={1080}
+                  height={1920}
+                  loading="lazy"
+                  className="relative aspect-[9/16] w-full rounded-xl object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.02]"
+                />
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-[oklch(1_0_0/10%)]"
+                />
+              </div>
+            </Parallax>
           </Reveal>
 
           <Reveal delay={220}>
