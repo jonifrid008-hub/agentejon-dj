@@ -105,7 +105,13 @@ function Contacto() {
 
         <div className="mt-20 grid gap-16 md:grid-cols-[1.2fr_1fr]">
           <Reveal>
-            <form onSubmit={onSubmit} noValidate className="space-y-6">
+            <form
+              action={FORMSPREE_ENDPOINT}
+              method="POST"
+              onSubmit={onSubmit}
+              noValidate
+              className="space-y-6"
+            >
               <div>
                 <label htmlFor="nombre" className="mb-2 block text-sm text-muted-foreground">
                   Nombre
@@ -147,9 +153,10 @@ function Contacto() {
               </div>
               <button
                 type="submit"
-                className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-85"
+                disabled={enviando}
+                className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-85 disabled:opacity-60"
               >
-                Enviar
+                {enviando ? "Enviando…" : "Enviar"}
               </button>
             </form>
           </Reveal>
