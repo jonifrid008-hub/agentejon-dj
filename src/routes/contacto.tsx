@@ -44,10 +44,10 @@ const schema = z.object({
 });
 
 const redes = [
-  { icon: Instagram, nombre: "Instagram", href: "#" },
-  { icon: Music4, nombre: "TikTok", href: "#" },
-  { icon: Youtube, nombre: "YouTube", href: "#" },
-  { icon: MessageCircle, nombre: "WhatsApp", href: "#" },
+  { icon: Instagram, nombre: "Instagram", href: "https://www.instagram.com/agente_jon_dj/" },
+  { icon: Music4, nombre: "TikTok", href: "https://www.tiktok.com/@agente_jon_dj" },
+  { icon: Youtube, nombre: "YouTube", href: "https://www.youtube.com/@agentejondj-b3b" },
+  { icon: MessageCircle, nombre: "WhatsApp", href: "https://wa.me/5491152267138" },
 ];
 
 const inputClass =
@@ -148,6 +148,8 @@ function Contacto() {
                 <a
                   key={r.nombre}
                   href={r.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-4 bg-background px-6 py-5 text-sm transition-colors hover:bg-surface"
                 >
                   <r.icon className="h-4 w-4 text-muted-foreground" strokeWidth={1.5} />
