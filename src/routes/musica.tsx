@@ -23,10 +23,25 @@ export const Route = createFileRoute("/musica")({
 });
 
 const plataformas = [
-  { icon: Music2, nombre: "Spotify", nota: "Espacio reservado para el perfil." },
-  { icon: Radio, nombre: "SoundCloud", nota: "Espacio reservado para los sets." },
-  { icon: Youtube, nombre: "YouTube", nota: "Espacio reservado para los videos." },
-  { icon: Disc3, nombre: "Mixes", nota: "Espacio reservado para mixes propios." },
+  {
+    icon: Music2,
+    nombre: "Spotify",
+    nota: "Escuchá mi perfil en Spotify.",
+    href: "https://open.spotify.com/user/kb2z4hlkxu7xeffmsk3lft4im?si=ff64584fa1c643b1",
+  },
+  {
+    icon: Radio,
+    nombre: "SoundCloud",
+    nota: "Mis sets en SoundCloud.",
+    href: "https://soundcloud.com/agentejon-dj-74494390",
+  },
+  {
+    icon: Youtube,
+    nombre: "YouTube",
+    nota: "Videos y presentaciones.",
+    href: "https://www.youtube.com/@agentejondj-b3b",
+  },
+  { icon: Disc3, nombre: "Mixes", nota: "Espacio reservado para mixes propios.", href: null },
 ];
 
 function Musica() {
