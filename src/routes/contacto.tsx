@@ -53,13 +53,17 @@ const redes = [
 const inputClass =
   "w-full rounded-md border border-input bg-surface px-4 py-3 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-ring";
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xvzenqka";
+
 function Contacto() {
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [enviando, setEnviando] = useState(false);
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form));
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
     const result = schema.safeParse(data);
 
     if (!result.success) {
@@ -72,10 +76,21 @@ function Contacto() {
     }
 
     setErrors({});
-    form.reset();
-    toast.success("Mensaje listo para enviarse", {
-      description: "Conectá el formulario a tu correo para recibir los mensajes.",
-    });
+    setEnviando(true);
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: formData,
+      });
+      if (!res.ok) throw new Error("Error de envío");
+      form.reset();
+      toast.success("¡Gracias por tu mensaje! Me pondré en contacto con vos lo antes posible.");
+    } catch {
+      toast.error("No se pudo enviar el mensaje. Intentá de nuevo en unos minutos.");
+    } finally {
+      setEnviando(false);
+    }
   }
 
   return (
@@ -90,7 +105,13 @@ function Contacto() {
 
         <div className="mt-20 grid gap-16 md:grid-cols-[1.2fr_1fr]">
           <Reveal>
-            <form onSubmit={onSubmit} noValidate className="space-y-6">
+            <form
+              action={FORMSPREE_ENDPOINT}
+              method="POST"
+              onSubmit={onSubmit}
+              noValidate
+              className="space-y-6"
+            >
               <div>
                 <label htmlFor="nombre" className="mb-2 block text-sm text-muted-foreground">
                   Nombre
@@ -132,9 +153,10 @@ function Contacto() {
               </div>
               <button
                 type="submit"
-                className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-85"
+                disabled={enviando}
+                className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-85 disabled:opacity-60"
               >
-                Enviar
+                {enviando ? "Enviando…" : "Enviar"}
               </button>
             </form>
           </Reveal>
