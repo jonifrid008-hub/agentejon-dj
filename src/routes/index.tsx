@@ -64,7 +64,10 @@ function Inicio() {
         </div>
       </section>
 
-      <section className="border-t border-border bg-background py-28 sm:py-40">
+      <section
+        id="sobre-mi"
+        className="scroll-mt-24 border-t border-border bg-background py-28 sm:py-40"
+      >
         <div className="section-shell grid items-center gap-14 lg:grid-cols-[45%_1fr] lg:gap-20">
           <Reveal>
             <Parallax strength={18}>
