@@ -5,7 +5,7 @@ import logo from "@/assets/agentejon-logo.png.asset.json";
 
 const links = [
   { to: "/", label: "Inicio" },
-  { to: "/sobre-mi", label: "Sobre mí" },
+  { to: "/", hash: "sobre-mi", label: "Sobre mí" },
   { to: "/musica", label: "Música" },
   { to: "/galeria", label: "Galería" },
   { to: "/contacto", label: "Contacto" },
