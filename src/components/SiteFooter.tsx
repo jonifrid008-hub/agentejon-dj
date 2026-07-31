@@ -17,7 +17,7 @@ export function SiteFooter() {
           <span className="font-display text-xs tracking-[0.3em] uppercase">AgenteJon DJ</span>
         </div>
         <nav className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-muted-foreground">
-          <Link to="/sobre-mi" className="transition-colors hover:text-foreground">
+          <Link to="/" hash="sobre-mi" className="transition-colors hover:text-foreground">
             Sobre mí
           </Link>
           <Link to="/musica" className="transition-colors hover:text-foreground">

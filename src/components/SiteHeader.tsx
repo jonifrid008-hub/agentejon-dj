@@ -47,9 +47,10 @@ export function SiteHeader() {
         <nav className="hidden items-center gap-9 md:flex">
           {links.map((l) => (
             <Link
-              key={l.to}
+              key={l.label}
               to={l.to}
-              activeOptions={{ exact: l.to === "/" }}
+              hash={"hash" in l ? l.hash : undefined}
+              activeOptions={{ exact: l.to === "/", includeHash: "hash" in l }}
               className="text-sm text-muted-foreground transition-colors hover:text-foreground data-[status=active]:text-foreground"
             >
               {l.label}
@@ -71,8 +72,9 @@ export function SiteHeader() {
         <nav className="section-shell flex flex-col gap-1 pb-6 md:hidden">
           {links.map((l) => (
             <Link
-              key={l.to}
+              key={l.label}
               to={l.to}
+              hash={"hash" in l ? l.hash : undefined}
               onClick={() => setOpen(false)}
               className="border-b border-border py-3 font-display text-lg tracking-tight"
             >
