@@ -65,14 +65,15 @@ function Musica() {
 
         <div className="mt-20 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2">
           {plataformas.map((p, i) => {
-            const Wrapper = p.href ? "a" : "div";
+            const esMixes = !p.href;
+            const Wrapper = p.href ? "a" : "button";
             return (
               <Reveal key={p.nombre} delay={i * 80}>
                 <Wrapper
                   {...(p.href
                     ? { href: p.href, target: "_blank", rel: "noopener noreferrer" }
-                    : {})}
-                  className="flex h-full flex-col gap-6 bg-background p-10 transition-colors hover:bg-surface"
+                    : { type: "button" as const, onClick: () => setPlayerAbierto(true) })}
+                  className="flex h-full w-full flex-col gap-6 bg-background p-10 text-left transition-colors hover:bg-surface"
                 >
                   <p.icon className="h-6 w-6 text-muted-foreground" strokeWidth={1.5} />
                   <div>
@@ -80,7 +81,7 @@ function Musica() {
                     <p className="mt-2 text-sm text-muted-foreground">{p.nota}</p>
                   </div>
                   <div className="mt-auto flex h-28 items-center justify-center rounded-md border border-dashed border-border text-xs tracking-[0.2em] text-muted-foreground uppercase">
-                    {p.href ? "Abrir perfil" : "Próximamente"}
+                    {esMixes ? "Escuchar mixes" : "Abrir perfil"}
                   </div>
                 </Wrapper>
               </Reveal>
@@ -88,6 +89,8 @@ function Musica() {
           })}
         </div>
       </div>
+
+      <MixPlayer open={playerAbierto} onClose={() => setPlayerAbierto(false)} />
     </section>
   );
 }
