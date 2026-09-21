@@ -43,10 +43,12 @@ const plataformas = [
     nota: "Videos y presentaciones.",
     href: "https://www.youtube.com/@agentejondj-b3b",
   },
-  { icon: Disc3, nombre: "Mixes", nota: "Espacio reservado para mixes propios.", href: null },
+  { icon: Disc3, nombre: "Mixes", nota: "Mixes propios para escuchar acá mismo.", href: null },
 ];
 
 function Musica() {
+  const [playerAbierto, setPlayerAbierto] = useState(false);
+
   return (
     <section className="pt-40 pb-28 sm:pt-48 sm:pb-36">
       <div className="section-shell">
