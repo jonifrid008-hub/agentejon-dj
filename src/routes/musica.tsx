@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Disc3, Music2, Radio, Youtube } from "lucide-react";
+import { useState } from "react";
 import { Reveal } from "@/components/Reveal";
+import { MixPlayer } from "@/components/MixPlayer";
 
 export const Route = createFileRoute("/musica")({
   head: () => ({
