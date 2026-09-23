@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Pause, Play, SkipBack, SkipForward, X } from "lucide-react";
 
-import mix1 from "@/assets/mixes/mix-1.m4a.asset.json";
-import mix2 from "@/assets/mixes/mix-2.m4a.asset.json";
-import mix3 from "@/assets/mixes/mix-3.m4a.asset.json";
+const mix1 = { url: "/audio/mix-1.m4a" };
+const mix2 = { url: "/audio/mix-2.m4a" };
+const mix3 = { url: "/audio/mix-3.m4a" };
 
 export const mixes = [
   { titulo: "Pre Dancing Mix 2026", nota: "Para arrancar la fiesta", src: mix1.url },
