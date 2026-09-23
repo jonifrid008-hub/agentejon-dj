@@ -58,8 +58,8 @@ function Musica() {
             Todo lo que suene, va a estar acá.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-            Estos espacios están preparados para sumar los enlaces y reproductores a medida que
-            publique material.
+            Escuchá mis sets, mixes y producciones, con sonidos que van desde el Tech House hasta
+            diferentes estilos que me inspiran.
           </p>
         </Reveal>
 
