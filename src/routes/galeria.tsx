@@ -1,18 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
 
-import foto0 from "@/assets/galeria/foto-0.jpg.asset.json";
-import foto1 from "@/assets/galeria/foto-1.jpg.asset.json";
-import foto2 from "@/assets/galeria/foto-2.jpg.asset.json";
-import foto3 from "@/assets/galeria/foto-3.jpg.asset.json";
-import foto4 from "@/assets/galeria/foto-4.jpg.asset.json";
-import foto5 from "@/assets/galeria/foto-5.jpg.asset.json";
-import foto6 from "@/assets/galeria/foto-6.jpg.asset.json";
-import foto7 from "@/assets/galeria/foto-7.jpg.asset.json";
-import foto8 from "@/assets/galeria/foto-8.jpg.asset.json";
-import foto9 from "@/assets/galeria/foto-9.jpg.asset.json";
-import video from "@/assets/galeria/video.mp4.asset.json";
-import videoPoster from "@/assets/galeria/video-poster.jpg.asset.json";
+const video = { url: "/videos/galeria-video.mp4" };
+const videoPoster = { url: "/images/galeria/video-poster.jpg" };
 
 export const Route = createFileRoute("/galeria")({
   head: () => ({
@@ -34,7 +24,10 @@ export const Route = createFileRoute("/galeria")({
   component: Galeria,
 });
 
-const fotos = [foto0, foto1, foto2, foto3, foto4, foto5, foto6, foto7, foto8, foto9];
+const fotos = Array.from({ length: 10 }, (_, i) => ({
+  asset_id: `foto-${i}`,
+  url: `/images/galeria/foto-${i}.jpg`,
+}));
 
 function Galeria() {
   return (

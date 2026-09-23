@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/agentejon-logo-v2.png.asset.json";
+const logo = { url: "/images/agentejon-logo.png" };
 
 export function SiteFooter() {
   return (

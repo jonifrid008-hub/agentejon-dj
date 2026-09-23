@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Headphones, Mic2, Sparkles, Speaker } from "lucide-react";
-import heroAsset from "@/assets/hero-crowd.png.asset.json";
+const heroAsset = { url: "/images/hero-crowd.png" };
 import retrato from "@/assets/agentejon-retrato-bn.jpg";
 import { Reveal, Parallax } from "@/components/Reveal";
 
