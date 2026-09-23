@@ -43,10 +43,11 @@ function Galeria() {
         <Reveal>
           <p className="eyebrow">Galería</p>
           <h1 className="mt-6 max-w-2xl font-display text-4xl leading-tight sm:text-6xl">
-            Un archivo que se va a ir llenando.
+            Momentos guardados detrás de la música.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-            Fotos y video de cada fecha.
+            Una selección de imágenes que muestran parte de mi recorrido como DJ, desde eventos y
+            presentaciones hasta momentos detrás de las bandejas.
           </p>
         </Reveal>
 
