@@ -99,21 +99,17 @@ function Inicio() {
             </h2>
             <div className="mt-8 space-y-5 text-base leading-relaxed text-muted-foreground sm:text-[1.0625rem]">
               <p>
-                Soy AgenteJon DJ. Comencé mi camino como DJ desde muy joven, impulsado por mi
-                pasión por la música y las ganas de aprender y crecer constantemente.
+                Soy Joni, DJ argentino y fanático de la música desde chico. Empecé a mezclar a los 10 años y, desde entonces, fui aprendiendo, practicando y buscando mi propio estilo detrás de las bandejas.
               </p>
               <p>
-                Desde mis primeros pasos fui desarrollando mi técnica, explorando diferentes
-                estilos musicales y adquiriendo experiencia en distintos eventos.
+                Me gusta especialmente el Tech House y los sonidos que hacen que la gente no pueda quedarse quieta, aunque también disfruto adaptarme a distintos estilos y momentos de cada fiesta.
               </p>
               <p>
-                Para mí, ser DJ no es solamente seleccionar canciones: es entender la energía del
-                momento, conectar con el público y crear una experiencia que se recuerde.
+                Para mí, ser DJ no es solamente poner canciones, es saber cuándo cambiar la energía, conectar con la gente y hacer que cada momento tenga su propia música.
               </p>
             </div>
             <blockquote className="mt-10 border-l border-border pl-6 font-display text-lg leading-snug text-foreground sm:text-xl">
-              “Una pasión que empezó desde muy temprano y que sigue creciendo con cada
-              presentación.”
+              “No mezclo canciones, mezclo emociones.”
             </blockquote>
             <Link
               to="/musica"
