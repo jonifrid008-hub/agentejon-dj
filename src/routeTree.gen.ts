@@ -9,25 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SobreMiRouteImport } from './routes/sobre-mi'
-import { Route as MusicaRouteImport } from './routes/musica'
-import { Route as GaleriaRouteImport } from './routes/galeria'
-import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ContactoRouteImport } from './routes/contacto'
+import { Route as GaleriaRouteImport } from './routes/galeria'
+import { Route as MusicaRouteImport } from './routes/musica'
+import { Route as SobreMiRouteImport } from './routes/sobre-mi'
 
-const SobreMiRoute = SobreMiRouteImport.update({
-  id: '/sobre-mi',
-  path: '/sobre-mi',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MusicaRoute = MusicaRouteImport.update({
-  id: '/musica',
-  path: '/musica',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GaleriaRoute = GaleriaRouteImport.update({
-  id: '/galeria',
-  path: '/galeria',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactoRoute = ContactoRouteImport.update({
@@ -35,9 +25,19 @@ const ContactoRoute = ContactoRouteImport.update({
   path: '/contacto',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const GaleriaRoute = GaleriaRouteImport.update({
+  id: '/galeria',
+  path: '/galeria',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MusicaRoute = MusicaRouteImport.update({
+  id: '/musica',
+  path: '/musica',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreMiRoute = SobreMiRouteImport.update({
+  id: '/sobre-mi',
+  path: '/sobre-mi',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -81,25 +81,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/sobre-mi': {
-      id: '/sobre-mi'
-      path: '/sobre-mi'
-      fullPath: '/sobre-mi'
-      preLoaderRoute: typeof SobreMiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/musica': {
-      id: '/musica'
-      path: '/musica'
-      fullPath: '/musica'
-      preLoaderRoute: typeof MusicaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/galeria': {
-      id: '/galeria'
-      path: '/galeria'
-      fullPath: '/galeria'
-      preLoaderRoute: typeof GaleriaRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contacto': {
@@ -109,11 +95,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/galeria': {
+      id: '/galeria'
+      path: '/galeria'
+      fullPath: '/galeria'
+      preLoaderRoute: typeof GaleriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/musica': {
+      id: '/musica'
+      path: '/musica'
+      fullPath: '/musica'
+      preLoaderRoute: typeof MusicaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre-mi': {
+      id: '/sobre-mi'
+      path: '/sobre-mi'
+      fullPath: '/sobre-mi'
+      preLoaderRoute: typeof SobreMiRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
